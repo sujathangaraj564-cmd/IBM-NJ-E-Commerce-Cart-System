@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>suja Commerce | Product Page</title>
+
+  <style>
+    /* ====== Base Styles ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f3f6fa;
+      color: #333;
+    }
+
+    /* ====== Header ====== */
+    header {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ====== Product Grid ====== */
+    .product-container {
+      max-width: 1200px;
+      margin: 50px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 0 20px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .product-details {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-details h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .product-details p {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: #0072ff;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      background: #0072ff;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🛒 suja E-Commerce</h1>
+    
+  </header>
+
+  <section class="product-container" id="product-list"></section>
+
+  <footer>
+    © 2025 suja E-Commerce Cart System | Designed with ❤️
+  </footer>
+
+  <script>
+    // ===== Product Data (with real images) =====
+    const products = [
+      {
+        id: 1,
+        name: "Apple iPhone 15 Pro",
+        desc: "6.1-inch Super Retina XDR display, A17 Pro chip, Titanium design.",
+        price: 134999,
+        img: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-family-hero"
+        },
+      {
+        id: 2,
+        name: "Sony WH-1000XM5 Headphones",
+        desc: "Industry-leading noise cancellation with 30 hours battery life.",
+        price: 29999,
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOux4xPx67B3OnDxjDlNlRkvE8msB70vjl7Q&s"     
+        },
+      {
+        id: 3,
+        name: "HP Pavilion 15 Laptop",
+        desc: "Intel i5 12th Gen, 16GB RAM, 512GB SSD, 15.6” FHD Display.",
+        price: 72999,
+        img: "https://m.media-amazon.com/images/I/71jbq-5PP-L._UF1000,1000_QL80_.jpg"
+        },
+      {
+        id: 4,
+        name: "Fossil Gen 6 Smartwatch",
+        desc: "Heart rate tracking, AMOLED display, 3ATM water resistance.",
+        price: 18999,
+        img: "https://m.media-amazon.com/images/I/51yI829dMoL._UF1000,1000_QL80_.jpg"
+        },
+      {
+        id: 5,
+        name: "Nike Air Max 270 Sneakers",
+        desc: "Stylish comfort shoes for everyday wear with air cushion sole.",
+        price: 11999,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyMkSoySJf4mh-kFshubK5WlAl4lRLbzv08A&s"
+        },
+      {
+        id: 6,
+        name: "Canon EOS M50 Mark II Camera",
+        desc: "Mirrorless 24.1MP camera with 4K video & flip screen.",
+        price: 58999,
+        img: "https://m.media-amazon.com/images/I/61qC8nQthRS._UF1000,1000_QL80_.jpg"
+        },
+      {
+        id: 7,
+        name: "Laptop Backpack",
+        desc: "waterproof and weightless product with unique look.",
+        price: 10000,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4DsKGNJTyV9Utyg6scH7sgZ16FNSNI09G_w&s"
+        },
+    ];
+
+    // ===== Render Products =====
+    const productList = document.getElementById("product-list");
+
+    products.forEach((item) => {
+      const card = document.createElement("div");
+      card.classList.add("product-card");
+      card.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <div class="product-details">
+          <h3>${item.name}</h3>
+          <p>${item.desc}</p>
+          <div class="price">₹${item.price}</div>
+          <button class="btn" onclick="addToCart('${item.name}')">Add to Cart</button>
+        </div>
+      `;
+      productList.appendChild(card);
+    });
+
+    // ===== Add to Cart (Simple Alert) =====
+    function addToCart(name) {
+      alert(`✅ ${name} added to your cart!`);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | suja E-Commerce</title>
+
+  <style>
+    /* === Basic Reset === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f4f7fb;
+      color: #333;
+    }
+
+    /* === Sidebar === */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 250px;
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      padding: 20px;
+      color: white;
+      box-shadow: 3px 0 15px rgba(0,0,0,0.1);
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 22px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      padding: 12px 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .sidebar ul li:hover {
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+    }
+
+    .sidebar ul li img {
+      width: 20px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    /* === Main Section === */
+    .main {
+      margin-left: 260px;
+      padding: 30px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 26px;
+      color: #0072ff;
+    }
+
+    .admin-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .admin-info img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    /* === Cards === */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #333;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .card p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* === Table Section === */
+    .table-section {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table thead {
+      background: #0072ff;
+      color: white;
+    }
+
+    table th, table td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    table tr:hover {
+      background: #f1f8ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #0072ff;
+      color: white;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- === Sidebar === -->
+  <div class="sidebar">
+    <h2>🛒 Admin Panel</h2>
+    <ul>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png"> Dashboard</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/4298/4298885.png"> Products</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/2630/2630620.png"> Orders</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"> Customers</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/2921/2921226.png"> Employees</li>
+      <li><img src="https://cdn-icons-png.flaticon.com/512/1828/1828490.png"> Logout</li>
+    </ul>
+  </div>
+
+  <!-- === Main Content === -->
+  <div class="main">
+    <header>
+      <h1>Woww..! Welcome Admin 👋</h1>
+      <div class="admin-info">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfnvISMw3_S5rzTpiYZGx2euGy_itSP0oKOw&s" alt="Admin">
+        <span><b>Admin:</b> suja</span>
+      </div>
+    </header>
+
+    <!-- === Dashboard Cards === -->
+    <div class="cards">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1256/1256650.png">
+        <h3>Total Sales</h3>
+        <p>₹1,25,000</p>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png">
+        <h3>Orders Today</h3>
+        <p>85 Orders</p>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/265/265674.png">
+        <h3>Active Products</h3>
+        <p>450 Items</p>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png">
+        <h3>Customers</h3>
+        <p>980 Users</p>
+      </div>
+    </div>
+
+    <!-- === Employee / Product Table === -->
+    <div class="table-section">
+      <h2>🧑‍💼 Employee List</h2>
+      <br>
+      <table>
+        <thead>
+          <tr>
+            <th>Emp ID</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Email</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>EMP101</td>
+            <td>keerthi.k.s</td>
+            <td>Product Manager</td>
+            <td>keerthi@ibm-nj.com</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>EMP102</td>
+            <td>sangeetha</td>
+            <td>Backend Developer</td>
+            <td>spriya@ibm-nj.com</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>EMP103</td>
+            <td>sowmiya</td>
+            <td>Frontend Developer</td>
+            <td>miya@ibm-nj.com</td>
+            <td>On Leave</td>
+          </tr>
+          <tr>
+            <td>EMP104</td>
+            <td>sahana</td>
+            <td>QA Engineer</td>
+            <td>sahan@ibm-nj.com</td>
+            <td>Active</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer>
+      <p>© 2025 suja E-Commerce Cart System | Admin Dashboard</p>
+    </footer>
+  </div>
+
+</body>
+</html>
+
